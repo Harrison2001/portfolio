@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Harrison Wier — Portfolio
 
-## Getting Started
+A single-page portfolio site for Harrison Wier, a Computer Science student and Data Science Research Assistant at Florida Gulf Coast University. The site showcases featured projects, technical skills, experience, and contact links with a dark, animated UI.
 
-First, run the development server:
+**Live repository:** [github.com/Harrison2001/portfolio](https://github.com/Harrison2001/portfolio)
+
+## Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| Framework | [Next.js 16](https://nextjs.org/) (App Router) |
+| Language | TypeScript 5 |
+| UI | React 19, Tailwind CSS 4 |
+| Animation | Framer Motion 12 |
+| Fonts | Geist Sans & Geist Mono (via `next/font`) |
+| Tooling | ESLint 9, PostCSS |
+
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server (http://localhost:3000)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production build
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+See [docs/SETUP.md](docs/SETUP.md) for prerequisites, environment details, and troubleshooting.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── app/              # Next.js App Router (layout, page, global styles)
+├── components/       # React section components
+├── data/             # Portfolio content (projects, skills, experience)
+├── docs/             # Project documentation
+└── public/           # Static assets
+```
 
-## Learn More
+See [docs/STRUCTURE.md](docs/STRUCTURE.md) for a detailed breakdown of each directory and file.
 
-To learn more about Next.js, take a look at the following resources:
+## Portfolio Sections
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The homepage (`app/page.tsx`) renders these sections in order:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Section | Component | Description |
+|---------|-----------|-------------|
+| Navigation | `Navbar` | Fixed header with anchor links |
+| Hero | `Hero` | Name, roles, intro, CTA buttons |
+| Technical Universe | `SkillOrbit` | Skill tags from `data/skills.ts` |
+| Featured Work | `Projects` | Project cards from `data/projects.ts` |
+| Journey | `Timeline` | Experience entries from `data/experience.ts` |
+| Engineering Focus | `Domains` | Expertise areas from `data/domains.ts` |
+| System Design | `Architecture` | Layered architecture overview |
+| Contact | `Footer` | Email, GitHub, LinkedIn links |
 
-## Deploy on Vercel
+See [docs/CONTENT.md](docs/CONTENT.md) for how to update portfolio content and featured projects.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is designed for deployment on [Vercel](https://vercel.com) (recommended for Next.js) or any Node.js host that supports Next.js standalone builds.
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for step-by-step deployment instructions.
+
+## Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [docs/SETUP.md](docs/SETUP.md) | Local development setup |
+| [docs/STRUCTURE.md](docs/STRUCTURE.md) | Folder and file reference |
+| [docs/CONTENT.md](docs/CONTENT.md) | Updating portfolio content |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deployment guide |
+| [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) | Known issues and planned improvements |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+
+## Known Issues
+
+Several items need attention before the site is fully production-ready. Highlights:
+
+- Page metadata still uses the default `create-next-app` title and description
+- Navbar anchor links for Experience and Skills may not scroll correctly (missing section IDs)
+- Project cards do not link to live demos or repositories
+
+See [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) for the full list and TODOs.
+
+## License
+
+Private project. All rights reserved.
